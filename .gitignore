@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 
 Gemfile.lock
 .ruby-version
+examples/mittsu-export.3mf
