@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.version = Mittsu::ThreeMF::VERSION
   spec.authors = ["James Smith"]
   spec.email = ["james@floppy.org.uk"]
-  spec.homepage = "https://github.com/manyfold3d/mittsu-mesh_analysis"
+  spec.homepage = "https://github.com/manyfold3d/mittsu-3mf"
   spec.summary = "3MF file support for Mittsu"
   spec.description = "3MF file support for Mittsu"
   spec.license = "MIT"
