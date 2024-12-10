@@ -1,5 +1,5 @@
-require 'rexml/document'
-require 'rexml/xpath'
+require "rexml/document"
+require "rexml/xpath"
 
 RSpec.describe Mittsu::ThreeMFExporter do
   let(:box) {
@@ -9,7 +9,7 @@ RSpec.describe Mittsu::ThreeMFExporter do
     box.name = "box"
     box
   }
-  let (:exporter) { described_class.new }
+  let(:exporter) { described_class.new }
 
   it "sanitizes model names for use as filenames" do
     box.name = "<box>"
@@ -28,7 +28,7 @@ RSpec.describe Mittsu::ThreeMFExporter do
   it "exports grouped meshes" do
     group = Mittsu::Group.new
     group.add(box)
-    group.add(Mittsu::Mesh.new(Mittsu::SphereGeometry.new()))
+    group.add(Mittsu::Mesh.new(Mittsu::SphereGeometry.new))
     file = exporter.send(:model_file, group)
     xml = REXML::Document.new file
     expect(REXML::XPath.match(xml, "/model/resources/object/mesh").count).to eq 2
@@ -58,5 +58,4 @@ RSpec.describe Mittsu::ThreeMFExporter do
       expect(File.exist?(filename)).to be true
     end
   end
-
 end
