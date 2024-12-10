@@ -16,7 +16,7 @@ RSpec.describe Mittsu::ThreeMFExporter do
     expect(exporter.send(:filesystem_safe_name, box)).to eq "box"
   end
 
-  it "can create a valid 3MF model file" do
+  it "can create a valid 3MF model file" do # rubocop:todo RSpec/ExampleLength, RSpec/MultipleExpectations
     file = exporter.send(:model_file, box)
     xml = REXML::Document.new file
     expect(REXML::XPath.first(xml, "/model/@unit").value).to eq "millimeter"
@@ -25,7 +25,7 @@ RSpec.describe Mittsu::ThreeMFExporter do
     expect(REXML::XPath.match(xml, "/model/resources/object/mesh/triangles/triangle").count).to eq 12
   end
 
-  it "exports grouped meshes" do
+  it "exports grouped meshes" do # rubocop:todo RSpec/ExampleLength, RSpec/MultipleExpectations
     group = Mittsu::Group.new
     group.add(box)
     group.add(Mittsu::Mesh.new(Mittsu::SphereGeometry.new))
