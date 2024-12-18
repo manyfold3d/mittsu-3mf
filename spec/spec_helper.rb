@@ -14,6 +14,9 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require "simplecov"
+SimpleCov.start
+
 require "mittsu/3mf"
 
 RSpec.configure do |config|
