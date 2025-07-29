@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "mittsu", "~> 0.4"
   spec.add_dependency "builder", "~> 3.3"
-  spec.add_dependency "rubyzip", "~> 2.3"
+  spec.add_dependency "rubyzip", ">= 2.3", "< 4.0"
 
   spec.add_development_dependency "rake", "~> 13.2"
   spec.add_development_dependency "rspec", "~> 3.13"
